@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - CUPA LOOP</title>
+    <link rel="stylesheet" href="../../style/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../style/custom.css">
+    <link rel="stylesheet" href="../../style/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../style/sweetalert2/sweetalert2.min.css">
+    
+</head>
+<body class="bg-light">
+    
+    <div class="d-flex app-shell">
+        
+        <aside class="bg-dark text-white p-3 sidebar-cupa d-flex flex-column">
+            
+            <div class="d-flex flex-column align-items-center mb-4 mt-2">
+                <div class="d-flex justify-content-center gap-2 mb-3">
+                    <img src="../../resources/Logo_UTL.png" alt="UTL" height="40">
+                    <img src="../../resources/logo_greenshift.png" alt="GreenShift" height="40">
+                </div>
+                <h5 class="text-success fw-bold mb-0 text-center">CUPA LOOP</h5>
+                <span class="badge bg-success mt-2">Administrador</span>
+            </div>
+
+            <nav class="nav flex-column mb-auto">
+                
+                <a class="nav-link btn-modulo active rounded mb-2 d-flex align-items-center gap-2" href="#" data-modulo="bandeja" onclick="cargarModulo('bandeja_de_pedidos.html')">
+                    <i class="bi bi-inbox"></i> Bandeja de pedidos
+                </a>
+
+                <a class="nav-link rounded mb-1 d-flex align-items-center justify-content-between" 
+                   data-bs-toggle="collapse" 
+                   href="#menuInventario" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="menuInventario">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-box-seam"></i> Inventario
+                    </div>
+                    <i class="bi bi-chevron-down small"></i>
+                </a>
+
+                <div class="collapse mb-2" id="menuInventario">
+                    <nav class="nav flex-column">
+                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2" href="#" data-modulo="inventario_actual" onclick="cargarModulo('inventario_actual.html')">
+                            <i class="bi bi-list-ul"></i> Inventario actual
+                        </a>
+                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2" href="#" data-modulo="registrar_producto" onclick="cargarModulo('registro_RAEE.html')">
+                            <i class="bi bi-plus-circle"></i> Registrar producto
+                        </a>
+                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2" href="#" data-modulo="registrar_categoria" onclick="cargarModulo('categorias.html')">
+                            <i class="bi bi-tags"></i> Registrar categoría
+                        </a>
+                    </nav>
+                </div>
+
+            </nav>
+
+            <hr class="text-secondary my-3">
+            <a class="nav-link text-danger rounded d-flex align-items-center gap-2" href="#" onclick="logout()">
+                <i class="bi bi-box-arrow-left"></i> Cerrar sesión
+            </a>
+
+        </aside>
+
+        <main class="flex-grow-1 p-4 area-trabajo" id="contenedor-principal">
+            
+            <div class="h-100 d-flex flex-column align-items-center justify-content-center text-muted opacity-50">
+                <i class="bi bi-recycle display-1 text-success mb-3"></i>
+                <h2 class="fw-bold">Bienvenido al Panel de Administración</h2>
+                <p>Selecciona una opción del menú lateral para comenzar a gestionar los residuos.</p>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../../style/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../style/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="../../js/admin.js"></script>
+</body>
+</html>

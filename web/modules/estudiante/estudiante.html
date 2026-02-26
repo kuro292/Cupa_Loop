@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Estudiante - CUPA LOOP</title>
+    <link rel="stylesheet" href="../../style/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../style/custom.css">
+    <link rel="stylesheet" href="../../style/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../style/sweetalert2/sweetalert2.min.css">
+    
+    <style>
+        .sidebar-cupa {
+            min-height: 100vh;
+            width: 260px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .nav-link {
+            color: #adb5bd;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            color: #fff;
+            background-color: rgba(25, 135, 84, 0.1);
+        }
+        .nav-link.active {
+            color: #fff;
+            background-color: #198754;
+        }
+        .area-trabajo {
+            height: 100vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <div class="d-flex app-shell">
+        
+        <aside class="bg-dark text-white p-3 sidebar-cupa d-flex flex-column">
+            
+            <div class="d-flex flex-column align-items-center mb-4 mt-2">
+                <div class="d-flex justify-content-center gap-2 mb-3">
+                    <img src="../../resources/Logo_UTL.png" alt="UTL" height="40">
+                    <img src="../../resources/logo_greenshift.png" alt="GreenShift" height="40">
+                </div>
+                <h5 class="text-success fw-bold mb-0 text-center">CUPA LOOP</h5>
+                <span class="badge bg-info mt-2 text-dark">Estudiante</span>
+            </div>
+
+            <nav class="nav flex-column mb-auto">
+                <a class="nav-link btn-modulo active rounded mb-2 d-flex align-items-center gap-2" href="#" onclick="cargarModulo('inventario_alumno.html')">
+                    <i class="bi bi-box-seam"></i> Catálogo de Reciclaje
+                </a>
+                <a class="nav-link btn-modulo rounded mb-2 d-flex align-items-center gap-2" href="#" onclick="cargarModulo('mis_pedidos.html')">
+                    <i class="bi bi-receipt"></i> Mis Solicitudes
+                </a>
+            </nav>
+
+            <hr class="text-secondary my-3">
+            <a class="nav-link text-danger rounded d-flex align-items-center gap-2" href="#" onclick="logout()">
+                <i class="bi bi-box-arrow-left"></i> Cerrar sesión
+            </a>
+
+        </aside>
+
+        <main class="flex-grow-1 p-4 area-trabajo" id="contenedor-principal">
+            <div class="h-100 d-flex flex-column align-items-center justify-content-center text-muted opacity-50 fade-in">
+                <i class="bi bi-person-badge display-1 text-info mb-3"></i>
+                <h2 class="fw-bold">Bienvenido al Panel de Estudiante</h2>
+                <p>Selecciona una opción del menú para explorar el catálogo disponible.</p>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="../../style/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../style/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="../../js/alumno.js"></script>
+</body>
+</html>

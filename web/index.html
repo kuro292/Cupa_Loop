@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUPA LOOP - Gestión de E-Waste</title>
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style/custom.css">
+    <link rel="stylesheet" href="style/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <style>
+        /* Estilos temporales para los espacios de imagen */
+        .img-placeholder {
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #dee2e6;
+            color: #6c757d;
+        }
+        .hero-section {
+            min-height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), #212529;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success sticky-top">
+        <div class="container">
+            <div class="d-flex align-items-center gap-4"> <div>
+                    <img src="resources/Logo_UTL.png" alt="UTL" height="50">
+                </div>
+
+                <div>
+                    <img src="resources/logo_greenshift.png" alt="GreenShift" height="50">
+                </div>
+
+                <a class="navbar-brand fw-bold text-success ms-2" href="index.html">♻️ CUPA LOOP</a>
+
+            </div>
+            <div class="ms-auto">
+                <a href="auth/login.html" class="btn btn-outline-success">Iniciar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+<header class="hero-section text-white text-center " background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(resources/biblioteca_ult.jpg);>        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-3">Hacia una universidad <span class="text-success">sostenible</span></h1>
+                    <p class="lead mb-4 text-light">Sistema integral de gestión de residuos electrónicos para la comunidad de la UTL.</p>
+                    
+                    <div class="mx-auto mb-4 shadow" style="width: 100%; max-width: 600px; height: 250px; border-radius: 15px; overflow: hidden;">
+                        <img src="resources/biblioteca_utl.jpg" 
+                             alt="Biblioteca UTL" 
+                             class="w-100 h-100" 
+                             style="object-fit: cover; object-position: center;">
+                    </div>
+
+                    <a href="auth/sing_up.html" class="btn btn-success btn-lg px-5 shadow-lg m-3">Comenzar Registro</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container text-center py-4">
+            <h2 class="fw-bold mb-5">Nuestra Misión Educativa</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-4 border rounded-3 shadow-sm h-100">
+                        <i class="bi bi-mortarboard text-success display-5 mb-3"></i>
+                        <h4>Impacto Académico</h4>
+                        <p>Fomentamos la cultura del reciclaje tecnológico en los estudiantes de TICS.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-4 border rounded-3 shadow-sm h-100">
+                        <i class="bi bi-shield-check text-success display-5 mb-3"></i>
+                        <h4>Estándares GreenShift</h4>
+                        <p>Aplicamos métricas reales de sostenibilidad en cada proceso de recolección.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark text-white-50 border-top border-success">
+        <div class="container text-center">
+            <p>Proyecto desarrollado por <strong>Equipo GreenShift</strong></p>
+            <div class="d-flex justify-content-center gap-3 opacity-50">
+                <span>UTL</span> | <span>GreenShift</span> | <span>2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

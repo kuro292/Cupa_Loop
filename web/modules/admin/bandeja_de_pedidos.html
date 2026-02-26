@@ -1,0 +1,34 @@
+<main class="w-100 layout-main fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-dark mb-1"><i class="bi bi-inbox text-success me-2"></i>Bandeja de pedidos</h2>
+            <p class="text-muted small mb-0">Solicitudes pendientes de alumnos. Aprueba o rechaza para liberar o asignar productos.</p>
+        </div>
+        <button class="btn btn-outline-secondary btn-sm" onclick="cargarBandeja()"><i class="bi bi-arrow-clockwise"></i> Actualizar</button>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-borderless align-middle mb-0">
+                    <thead class="table-light border-bottom">
+                        <tr>
+                            <th class="ps-4">Folio</th>
+                            <th>Producto</th>
+                            <th>Alumno (Matrícula)</th>
+                            <th>Motivo</th>
+                            <th>Fecha Solicitud</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center pe-4">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyBandeja">
+                        <tr>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

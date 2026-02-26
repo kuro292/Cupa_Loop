@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - CUPA LOOP</title>
+    <link rel="stylesheet" href="../style/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/custom.css">
+    <link rel="stylesheet" href="../style/bootstrap-icons-1.13.1/bootstrap-icons.css">
+</head>
+<body class="bg-light page-auth">
+    
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="card shadow-lg border-0" style="max-width: 500px; width: 100%;">
+            <div class="card-body p-5">
+                
+                <div class="mb-4">
+                    <a href="../index.html" class="text-decoration-none text-muted small">
+                        <i class="bi bi-arrow-left"></i> Volver al inicio
+                    </a>
+                </div>
+
+                <div class="text-center mb-4">
+                    <i class="bi bi-person-plus text-success display-4"></i>
+                    <h2 class="fw-bold text-success mt-2">Únete a CUPA LOOP</h2>
+                    <p class="text-muted">Registro de la comunidad universitaria</p>
+                </div>
+
+                <form id="frmRegistro">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="form-label fw-bold">Nombre</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                                <input type="text" id="txtNombre" class="form-control" placeholder="Juan" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Apellido</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                                <input type="text" id="txtApellido" class="form-control" placeholder="Pérez" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Correo Institucional</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-envelope"></i></span>
+                            <input type="email" id="txtEmail" class="form-control" placeholder="alumno@utleon.edu.mx" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-shield-lock"></i></span>
+                            <input type="password" id="txtPassword" class="form-control" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success w-100 py-2 mb-3 fw-bold">Crear Cuenta</button>
+
+                    <div class="text-center mt-3">
+                        <span class="text-muted small">¿Ya tienes una cuenta?</span>
+                        <a href="login.html" class="text-success small text-decoration-none fw-bold">Inicia sesión aquí</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="../style/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../style/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="../js/login.js"></script>
+    <script>
+        document.getElementById('frmRegistro').addEventListener('submit', registrarUsuario);
+    </script>
+</body>
+</html>

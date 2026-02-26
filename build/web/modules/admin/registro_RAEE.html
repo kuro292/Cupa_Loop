@@ -1,0 +1,58 @@
+<main class="w-100 layout-main fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="mb-4 text-center">
+                <h2 class="fw-bold text-dark mb-1"><i class="bi bi-pc-display text-success me-2"></i>Registrar E-Waste</h2>
+                <p class="text-muted small">Ingresa un nuevo residuo tecnológico (RAEE) al sistema CUPA LOOP.</p>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted">Tipo de Dispositivo</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-tag"></i></span>
+                                <select class="form-select" id="cmbTipo">
+                                    <option selected disabled>Cargando categorias...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted">Nombre / Modelo</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-pencil"></i></span>
+                                <input type="text" class="form-control" id="txtNombre" placeholder="Ej. Dell OptiPlex 3020, HP LaserJet Pro...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small text-muted">Estado Inicial del Equipo</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-activity"></i></span>
+                                <select class="form-select" id="cmbEstado">
+                                    <option selected disabled>Evaluación física...</option>
+                                    <option value="FUNCIONAL">Funcional (Donación)</option>
+                                    <option value="REPARABLE">Dañado (Reparable)</option>
+                                    <option value="OBSOLETO">Obsoleto (Solo piezas/Reciclaje)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label class="form-label fw-bold small text-muted">Descripción, Marca o Número de Serie</label>
+                        <textarea class="form-control" id="txtDescripcion" rows="3" placeholder="Ej. Monitor HP L1710, pantalla rayada pero enciende. SN: XYZ123..."></textarea>
+                    </div>
+
+                    <div class="col-12 pt-3 border-top d-flex justify-content-end gap-2">
+                        <button type="reset" class="btn btn-light px-4">Limpiar</button>
+                        <button type="button" class="btn btn-success px-5" onclick="registrarProducto()"><i class="bi bi-check-circle me-2"></i>Guardar Registro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
