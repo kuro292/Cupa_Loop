@@ -1,3 +1,17 @@
+
+/* Artifact:   login.js
+
+    Version:    1.0
+    Date:       2026-02-25 19:00:00
+    Author:     Claudia Estefania Contreras Portugal
+    Email:      88014@alumnos.utloen.edu.mx
+    Comments:   Este js gestiona el control de acceso y el registro de 
+                usuarios para el sistema mediante peticiones asíncronas al 
+                API. Se encarga de validar credenciales, manejar sesiones en el 
+                navegador y redirigir dinámicamente a los usuarios según su rol 
+                asignado (admin o estudiante)
+*/
+
 async function login() {
     let identificadorUsuario = document.getElementById("txtIdentificador").value.trim();
     let contrasenia = document.getElementById("txtPassword").value.trim();

@@ -1,3 +1,14 @@
+/*
+    Artifact:   RESTUsuario.java
+
+    Version:    1.0
+    Date:       2026-02-25 19:00:00
+    Author:     Claudia Estefania Contreras Portugal
+    Email:      88014@alumnos.utloen.edu.mx
+    Comments:   Esta clase contiene los servicios web (API REST) para que la 
+                página web pueda enviar datos de inicio de sesión y registro, 
+                conectando la interfaz de usuario con la lógica del servidor
+*/
 package com.greenshift.cupaloop.rest;
 
 import com.google.gson.Gson;

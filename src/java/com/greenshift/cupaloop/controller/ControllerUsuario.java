@@ -1,3 +1,16 @@
+/*
+    Artifact:   ControllerUsuario.java
+
+    Version:    1.0
+    Date:       2026-02-25 19:00:00
+    Author:     Claudia Estefania Contreras Portugal
+    Email:      88014@alumnos.utloen.edu.mx
+    Comments:   Esta clase controla el acceso al sistema verificando que el 
+                usuario y la contraseña sean correctos en la base de datos. 
+                También se encarga de dar de alta a nuevos alumnos, revisando 
+                primero que no estén registrados previamente
+*/
+
 package com.greenshift.cupaloop.controller;
 
 import com.greenshift.cupaloop.bd.ConexionMySQL;
