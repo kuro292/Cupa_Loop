@@ -1,3 +1,33 @@
+<!-- 
+================================================================================
+Artifact:       admin.html
+Proyecto:       CUPA LOOP - Sistema de Gestión de Residuos Electrónicos (RAEE)
+Tipo:           Página maestra (Master Page)
+================================================================================
+
+Version:    1.0
+Date:       2025-02-16
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Master page del contenido admin. Contiene la barra lateral funcional
+            y el contenedor principal que carga dinámicamente los módulos:
+            Bandeja de Pedidos, Inventario y Registro de Producto.
+
+Version:    1.1
+Date:       2025-02-20
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Cambio de diseño en la barra lateral. Opción "Registrar Categoría"
+            agregada. Interfaz más intuitiva: al presionar "Inventario" se 
+            despliega un submenú. Agregado de logos UTL y equipo GreenShift.
+
+Version:    1.2
+Date:       2025-02-25
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Rediseño de barra lateral. Eliminación de logos UTL y GreenShift.
+            Logo CUPA LOOP añadido.
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,34 +38,58 @@
     <link rel="stylesheet" href="../../style/custom.css">
     <link rel="stylesheet" href="../../style/bootstrap-icons-1.13.1/bootstrap-icons.css">
     <link rel="stylesheet" href="../../style/sweetalert2/sweetalert2.min.css">
-    
 </head>
 <body class="bg-light">
-    
+
+    <!-- 
+        Contenedor principal tipo flex:
+        - aside  → Barra lateral fija con navegación
+        - main   → Área de trabajo dinámica que carga los módulos
+    -->
     <div class="d-flex app-shell">
-        
+
+        <!--
+             BARRA LATERAL (Sidebar)
+             Contiene: logo, badge de rol, navegación y botón de logout.
+             La clase 'sidebar-cupa' define su ancho y comportamiento
+             desde custom.css.
+        -->
         <aside class="bg-dark text-white p-3 sidebar-cupa d-flex flex-column">
-            
+
+            <!-- Encabezado del sidebar: logo e identificación del rol -->
             <div class="d-flex flex-column align-items-center mb-4 mt-2">
                 <div class="d-flex justify-content-center gap-2 mb-3">
-                    <img src="../../resources/Logo_UTL.png" alt="UTL" height="40">
-                    <img src="../../resources/logo_greenshift.png" alt="GreenShift" height="40">
+                    <img src="../../resources/Gemini_Generated_Image_lg3vx1lg3vx1lg3v-Photoroom.png" alt="Logo UTL" height="100s">
                 </div>
-                <h5 class="text-success fw-bold mb-0 text-center">CUPA LOOP</h5>
+                <!-- Badge que indica el rol del usuario autenticado -->
                 <span class="badge bg-success mt-2">Administrador</span>
             </div>
 
+            <!--
+                 Menú de navegación lateral
+                 Cada enlace llama a cargarModulo(archivo) definida en
+                 admin.js, que inyecta el HTML del módulo en 
+                 #contenedor-principal mediante fetch().
+                 
+                 El submenú de Inventario usa el componente Collapse de
+                 Bootstrap (data-bs-toggle="collapse").
+            -->
             <nav class="nav flex-column mb-auto">
-                
-                <a class="nav-link btn-modulo active rounded mb-2 d-flex align-items-center gap-2" href="#" data-modulo="bandeja" onclick="cargarModulo('bandeja_de_pedidos.html')">
+
+                <!-- Opción: Bandeja de Pedidos -->
+                <a class="nav-link btn-modulo active rounded mb-2 d-flex align-items-center gap-2"
+                   href="#"
+                   data-modulo="bandeja"
+                   onclick="cargarModulo('bandeja_de_pedidos.html')">
                     <i class="bi bi-inbox"></i> Bandeja de pedidos
                 </a>
 
-                <a class="nav-link rounded mb-1 d-flex align-items-center justify-content-between" 
-                   data-bs-toggle="collapse" 
-                   href="#menuInventario" 
-                   role="button" 
-                   aria-expanded="false" 
+                <!-- Opción: Inventario (desplegable) -->
+                <a class="nav-link rounded mb-1 d-flex align-items-center justify-content-between"
+                   data-bs-toggle="collapse"
+                   href="#menuInventario"
+                   role="button"
+                   aria-expanded="false"
                    aria-controls="menuInventario">
                     <div class="d-flex align-items-center gap-2">
                         <i class="bi bi-box-seam"></i> Inventario
@@ -43,31 +97,60 @@
                     <i class="bi bi-chevron-down small"></i>
                 </a>
 
+                <!-- Submenú de Inventario (colapso Bootstrap) -->
                 <div class="collapse mb-2" id="menuInventario">
                     <nav class="nav flex-column">
-                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2" href="#" data-modulo="inventario_actual" onclick="cargarModulo('inventario_actual.html')">
+
+                        <!-- Subopción: Ver inventario actual -->
+                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2"
+                           href="#"
+                           data-modulo="inventario_actual"
+                           onclick="cargarModulo('inventario_actual.html')">
                             <i class="bi bi-list-ul"></i> Inventario actual
                         </a>
-                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2" href="#" data-modulo="registrar_producto" onclick="cargarModulo('registro_RAEE.html')">
+
+                        <!-- Subopción: Registrar nuevo RAEE -->
+                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2"
+                           href="#"
+                           data-modulo="registrar_producto"
+                           onclick="cargarModulo('registro_RAEE.html')">
                             <i class="bi bi-plus-circle"></i> Registrar producto
                         </a>
-                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2" href="#" data-modulo="registrar_categoria" onclick="cargarModulo('categorias.html')">
+
+                        <!-- Subopción: Registrar nueva categoría -->
+                        <a class="nav-link btn-modulo submenu-link rounded mb-1 d-flex align-items-center gap-2"
+                           href="#"
+                           data-modulo="registrar_categoria"
+                           onclick="cargarModulo('categorias.html')">
                             <i class="bi bi-tags"></i> Registrar categoría
                         </a>
+
                     </nav>
                 </div>
 
             </nav>
 
             <hr class="text-secondary my-3">
-            <a class="nav-link text-danger rounded d-flex align-items-center gap-2" href="#" onclick="logout()">
+
+            <!-- Botón de cierre de sesión — llama a logout() en admin.js -->
+            <a class="nav-link text-danger rounded d-flex align-items-center gap-2"
+               href="#"
+               onclick="logout()">
                 <i class="bi bi-box-arrow-left"></i> Cerrar sesión
             </a>
 
         </aside>
 
+        <!-- 
+             ÁREA DE TRABAJO (Main Content)
+             Los módulos HTML se inyectan aquí dinámicamente mediante
+             cargarModulo() al seleccionar una opción del sidebar.
+             
+             ID: contenedor-principal  (requerido por admin.js)
+        -->
         <main class="flex-grow-1 p-4 area-trabajo" id="contenedor-principal">
-            
+
+            <!-- Pantalla de bienvenida — se reemplaza al cargar cualquier módulo -->
             <div class="h-100 d-flex flex-column align-items-center justify-content-center text-muted opacity-50">
                 <i class="bi bi-recycle display-1 text-success mb-3"></i>
                 <h2 class="fw-bold">Bienvenido al Panel de Administración</h2>
@@ -78,8 +161,12 @@
 
     </div>
 
+    <!-- Scripts de Bootstrap y SweetAlert2 -->
     <script src="../../style/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../style/sweetalert2/sweetalert2.all.min.js"></script>
+    <!-- Lógica principal del panel de administración -->
     <script src="../../js/admin.js"></script>
+
 </body>
 </html>
+

@@ -1,12 +1,56 @@
+<!-- 
+================================================================================
+Artifact:       bandeja_de_pedidos.html
+Proyecto:       CUPA LOOP - Sistema de Gestión de Residuos Electrónicos (RAEE)
+Tipo:           Módulo (fragmento HTML inyectado en admin.html)
+================================================================================
+
+Version:    1.0
+Date:       2025-02-16
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Módulo Bandeja de Pedidos. Muestra todas las solicitudes realizadas
+            por estudiantes y permite al administrador aprobarlas o rechazarlas.
+
+Version:    1.1
+Date:       2025-02-20
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Modificación de estilos. Agregado de botón "Actualizar" para 
+            recargar la tabla y ver cambios en tiempo real sin recargar la página.
+
+Version:    1.2
+Date:       2025-02-24
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Rediseño general. Agregada opción para ver mensajes de aprobación
+            del alumno y para enviar mensajes justificando el rechazo de un pedido.
+-->
+
+<!-- Contenedor principal del módulo -->
 <main class="w-100 layout-main fade-in">
+
+    <!-- Encabezado del módulo con título, descripción y botón de actualización -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h2 class="fw-bold text-dark mb-1"><i class="bi bi-inbox text-success me-2"></i>Bandeja de pedidos</h2>
-            <p class="text-muted small mb-0">Solicitudes pendientes de alumnos. Aprueba o rechaza para liberar o asignar productos.</p>
+            <h2 class="fw-bold text-dark mb-1">
+                <i class="bi bi-inbox text-success me-2"></i>Bandeja de pedidos
+            </h2>
+            <p class="text-muted small mb-0">
+                Solicitudes pendientes de alumnos. Aprueba o rechaza para liberar o asignar productos.
+            </p>
         </div>
-        <button class="btn btn-outline-secondary btn-sm" onclick="cargarBandeja()"><i class="bi bi-arrow-clockwise"></i> Actualizar</button>
+        <!-- Botón de recarga manual ejecuta cargarBandeja() para refrescar los datos -->
+        <button class="btn btn-outline-secondary btn-sm" onclick="cargarBandeja()">
+            <i class="bi bi-arrow-clockwise"></i> Actualizar
+        </button>
     </div>
 
+    <!--
+         Tabla de solicitudes
+         Los datos se cargan dinámicamente en #tbodyBandeja por
+         cargarBandeja() al iniciar el módulo.
+    -->
     <div class="card border-0 shadow-sm rounded-3">
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -22,13 +66,15 @@
                             <th class="text-center pe-4">Acciones</th>
                         </tr>
                     </thead>
+                    <!-- 
+                        Las filas se generan en tiempo de ejecución por cargarBandeja().
+                    -->
                     <tbody id="tbodyBandeja">
-                        <tr>
-                            
-                        </tr>
+                        <tr></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
 </main>

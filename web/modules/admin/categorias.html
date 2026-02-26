@@ -1,37 +1,109 @@
+<!-- 
+================================================================================
+Artifact:       categorias.html
+Proyecto:       CUPA LOOP - Sistema de Gestión de Residuos Electrónicos (RAEE)
+Tipo:           Módulo (fragmento HTML inyectado en admin.html)
+================================================================================
+
+Version:    1.0
+Date:       2025-02-20
+Author:     Robledo Negrete Juan Antonio
+Email:      robledonegrete@gmail.com
+Comments:   Módulo de Categorías. Permite registrar nuevas categorías de RAEE
+            y visualizar las categorías activas en el sistema.
+-->
+
+<!-- Contenedor principal del módulo -->
 <main class="w-100 layout-main fade-in">
+
+    <!-- Encabezado del módulo -->
     <div class="mb-4">
-        <h2 class="fw-bold text-dark mb-1"><i class="bi bi-tags text-success me-2"></i>Gestión de Categorías</h2>
-        <p class="text-muted small">Administra los tipos de residuos para mantener el inventario ordenado.</p>
+        <h2 class="fw-bold text-dark mb-1">
+            <i class="bi bi-tags text-success me-2"></i>Gestión de Categorías
+        </h2>
+        <p class="text-muted small">
+            Administra los tipos de residuos para mantener el inventario ordenado.
+        </p>
     </div>
 
     <div class="row g-4">
+
+        <!-- 
+             Panel izquierdo: Formulario para registrar una nueva categoría
+             Al enviar, guardarCategoria() valida y hace POST a la API.
+        -->
         <div class="col-lg-4">
             <div class="card border-0 shadow-sm rounded-3 h-100">
                 <div class="card-body p-4">
-                    <h5 class="card-title fw-bold mb-4 text-success"><i class="bi bi-plus-circle me-2"></i>Nueva Categoría</h5>
-                        <div class="col-12">
-                            <label class="form-label fw-bold small text-muted">Nombre de Categoría</label>
-                            <input type="text" id="txtNombreCategoria" class="form-control" placeholder="Ej. Monitores" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label fw-bold small text-muted">Descripción (opcional)</label>
-                            <textarea id="txtDescripcionCategoria" class="form-control" rows="3" placeholder="Detalles sobre qué incluye esta categoría..."></textarea>
-                        </div>
-                        <div id="mensajeCategoria" class="alert alert-danger py-2 small" style="display:none;"></div>
-                        <div class="col-12 mt-4">
-                            <button type="button" class="btn btn-success w-100" onclick="guardarCategoria()"><i class="bi bi-save me-2"></i>Guardar Categoria</button>
-                        </div>
+                    <h5 class="card-title fw-bold mb-4 text-success">
+                        <i class="bi bi-plus-circle me-2"></i>Nueva Categoría
+                    </h5>
+
+                    <!-- Campo: Nombre de la categoría (requerido) -->
+                    <div class="col-12">
+                        <label class="form-label fw-bold small text-muted">
+                            Nombre de Categoría
+                        </label>
+                        <input type="text"
+                               id="txtNombreCategoria"
+                               class="form-control"
+                               placeholder="Ej. Monitores"
+                               required>
+                    </div>
+
+                    <!-- Campo: Descripción de la categoría (opcional) -->
+                    <div class="col-12">
+                        <label class="form-label fw-bold small text-muted">
+                            Descripción (opcional)
+                        </label>
+                        <textarea id="txtDescripcionCategoria"
+                                  class="form-control"
+                                  rows="3"
+                                  placeholder="Detalles sobre qué incluye esta categoría...">
+                        </textarea>
+                    </div>
+
+                    <!-- 
+                        Área de mensajes de error o validación.
+                        Se muestra/oculta desde guardarCategoria() según el resultado.
+                    -->
+                    <div id="mensajeCategoria"
+                         class="alert alert-danger py-2 small"
+                         style="display:none;">
+                    </div>
+
+                    <!-- Botón de envío del formulario -->
+                    <div class="col-12 mt-4">
+                        <button type="button"
+                                class="btn btn-success w-100"
+                                onclick="guardarCategoria()">
+                            <i class="bi bi-save me-2"></i>Guardar Categoría
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
 
+        <!-- 
+             Panel derecho: Tabla de categorías activas
+             Los datos se cargan dinámicamente en #tbodyCategorias por
+             cargarCategorias() al iniciar el módulo.
+        -->
         <div class="col-lg-8">
             <div class="card border-0 shadow-sm rounded-3 h-100">
                 <div class="card-body p-0">
+
+                    <!-- Cabecera del panel con conteo de registros -->
                     <div class="p-4 border-bottom d-flex justify-content-between align-items-center">
                         <h5 class="card-title fw-bold mb-0 text-dark">Categorías Activas</h5>
+                        <!-- 
+                            Badge de conteo actualizado dinámicamente por cargarCategorias().
+                            El valor "4 Registros" es un placeholder inicial.
+                        -->
                         <span class="badge bg-secondary rounded-pill">4 Registros</span>
                     </div>
+
                     <div class="table-responsive">
                         <table class="table table-hover align-middle mb-0">
                             <thead class="table-light">
@@ -41,6 +113,11 @@
                                     <th class="pe-4">Descripción</th>
                                 </tr>
                             </thead>
+                            <!-- 
+                                NOTA: La fila siguiente es un placeholder de diseño.
+                                En ejecución, cargarCategorias() reemplaza todo el 
+                                contenido de #tbodyCategorias con datos reales de la API.
+                            -->
                             <tbody id="tbodyCategorias">
                                 <tr>
                                     <td class="ps-4 fw-bold">CAT-01</td>
@@ -50,8 +127,10 @@
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
 </main>
